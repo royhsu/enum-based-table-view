@@ -21,6 +21,7 @@ class RestaurantDetailTableViewController: UITableViewController {
         
         tableView.separatorStyle = .none
         
+        // Header cell.
         tableView.register(
             UINib(
                 nibName: "RestaurantDetailHeaderTableViewCell",
@@ -29,11 +30,13 @@ class RestaurantDetailTableViewController: UITableViewController {
             forCellReuseIdentifier: "RestaurantDetailHeaderTableViewCell"
         )
         
+        // Information cell.
         tableView.register(
             RestaurantDetailInformationTableViewCell.self,
             forCellReuseIdentifier: "RestaurantDetailInformationTableViewCell"
         )
         
+        // Map cell.
         tableView.register(
             RestaurantDetailMapTableViewCell.self,
             forCellReuseIdentifier: "RestaurantDetailMapTableViewCell"
@@ -41,7 +44,12 @@ class RestaurantDetailTableViewController: UITableViewController {
         
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int { return 3 }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        
+        // Header. Information. Map.
+        return 3
+        
+    }
     
     override func tableView(
         _ tableView: UITableView,
@@ -51,9 +59,14 @@ class RestaurantDetailTableViewController: UITableViewController {
         
         switch section {
             
-        case 0, 2: return 1
+        // Header.
+        case 0: return 1
             
+        // Information.
         case 1: return 3
+            
+        // Map.
+        case 2: return 1
             
         default: fatalError("Invalid section.")
             
@@ -69,6 +82,7 @@ class RestaurantDetailTableViewController: UITableViewController {
         
         switch indexPath.section {
             
+        // Header.
         case 0:
             
             let cell = tableView.dequeueReusableCell(
@@ -82,10 +96,12 @@ class RestaurantDetailTableViewController: UITableViewController {
             
             return cell
             
+        // Information.
         case 1:
             
             switch indexPath.row {
                 
+            // Phone number.
             case 0:
                 
                 let cell = tableView.dequeueReusableCell(
@@ -99,6 +115,7 @@ class RestaurantDetailTableViewController: UITableViewController {
                 
                 return cell
                 
+            // Business hours.
             case 1:
                 
                 let cell = tableView.dequeueReusableCell(
@@ -111,7 +128,8 @@ class RestaurantDetailTableViewController: UITableViewController {
                 cell.contentLabel.text = restaurant?.businessHours
                 
                 return cell
-                
+            
+            // Address.
             case 2:
                 
                 let cell = tableView.dequeueReusableCell(
@@ -129,6 +147,7 @@ class RestaurantDetailTableViewController: UITableViewController {
                 
             }
             
+        // Map.
         case 2:
             
             let cell = tableView.dequeueReusableCell(
@@ -169,8 +188,13 @@ class RestaurantDetailTableViewController: UITableViewController {
         
         switch indexPath.section {
             
-        case 0, 1: return UITableView.automaticDimension
+        // Header.
+        case 0: return UITableView.automaticDimension
             
+        // Information.
+        case 1: return UITableView.automaticDimension
+            
+        // Map.
         case 2: return 200.0
             
         default: fatalError("Invalid section.")
