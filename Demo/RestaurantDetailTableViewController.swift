@@ -82,7 +82,7 @@ class RestaurantDetailTableViewController: UITableViewController {
         
         case .header: return 1
             
-        case .information: return 3
+        case .information: return informationElements.count
             
         case .map: return 1
             
