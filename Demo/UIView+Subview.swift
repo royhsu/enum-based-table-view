@@ -1,6 +1,6 @@
 //
 //  UIView+Subview.swift
-//  TinyComponent
+//  Demo
 //
 //  Created by Roy Hsu on 11/02/2018.
 //  Copyright © 2018 TinyWorld. All rights reserved.
@@ -11,11 +11,11 @@
 import UIKit
 
 // Reference: https://stackoverflow.com/questions/26652854/ios8-cell-constraints-break-when-adding-disclosure-indicator
-public extension UIView {
+extension UIView {
 
     /// A convenient method to add subview and pin it to edges to the parent with Auto Layout.
     @discardableResult
-    public final func wrapSubview(_ view: UIView) -> (
+    func wrapSubview(_ view: UIView) -> (
         topConstraint: NSLayoutConstraint,
         leadingConstraint: NSLayoutConstraint,
         bottomConstraint: NSLayoutConstraint,

@@ -12,9 +12,9 @@ import CoreLocation
 import UIKit
 
 @UIApplicationMain
-public final class AppDelegate: UIResponder {
+class AppDelegate: UIResponder {
     
-    public final let window = UIWindow(frame: UIScreen.main.bounds)
+    let window = UIWindow(frame: UIScreen.main.bounds)
     
 }
 
@@ -22,7 +22,7 @@ public final class AppDelegate: UIResponder {
 
 extension AppDelegate: UIApplicationDelegate {
     
-    public final func application(
+    func application(
         _ application: UIApplication,
         didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
     )
