@@ -55,21 +55,19 @@ class RestaurantDetailInformationTableViewCell: UITableViewCell {
 
         constraints.leadingConstraint.constant = -20.0
 
-        constraints.topConstraint.constant = -10.0
-
         constraints.trailingConstraint.constant = 10.0
 
-        constraints.bottomConstraint.constant = 10.0
+        constraints.bottomConstraint.constant = 8.0
         
         titleLabel.widthAnchor.constraint(equalToConstant: 80.0)
         
         titleLabel.textColor = .lightGray
         
-        titleLabel.font = .systemFont(ofSize: 12.0)
+        titleLabel.font = .preferredFont(forTextStyle: .caption1)
 
         contentLabel.textColor = .darkGray
         
-        contentLabel.font = .systemFont(ofSize: 14.0)
+        contentLabel.font = .preferredFont(forTextStyle: .body)
         
         contentLabel.numberOfLines = 0
         

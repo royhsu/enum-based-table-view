@@ -22,7 +22,10 @@ class RestaurantDetailTableViewController: UITableViewController {
         tableView.separatorStyle = .none
         
         tableView.register(
-            RestaurantDetailHeaderTableViewCell.self,
+            UINib(
+                nibName: "RestaurantDetailHeaderTableViewCell",
+                bundle: nil
+            ),
             forCellReuseIdentifier: "RestaurantDetailHeaderTableViewCell"
         )
         
