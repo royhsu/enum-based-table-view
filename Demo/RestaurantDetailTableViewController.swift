@@ -13,6 +13,30 @@ import UIKit
 
 class RestaurantDetailTableViewController: UITableViewController {
     
+    enum DetailElement {
+        
+        case header, information, map
+        
+    }
+    
+    enum InformationElement {
+        
+        case phoneNumber, businessHours, address
+        
+    }
+    
+    let detailElements: [DetailElement] = [
+        .header,
+        .information,
+        .map
+    ]
+    
+    let informationElements: [InformationElement] = [
+        .phoneNumber,
+        .businessHours,
+        .address
+    ]
+    
     var restaurant: Restaurant?
     
     override func viewDidLoad() {
@@ -44,12 +68,7 @@ class RestaurantDetailTableViewController: UITableViewController {
         
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        
-        // Header. Information. Map.
-        return 3
-        
-    }
+    override func numberOfSections(in tableView: UITableView) -> Int { return detailElements.count }
     
     override func tableView(
         _ tableView: UITableView,
@@ -57,18 +76,15 @@ class RestaurantDetailTableViewController: UITableViewController {
     )
     -> Int {
         
-        switch section {
+        let element = detailElements[section]
+        
+        switch element {
+        
+        case .header: return 1
             
-        // Header.
-        case 0: return 1
+        case .information: return 3
             
-        // Information.
-        case 1: return 3
-            
-        // Map.
-        case 2: return 1
-            
-        default: fatalError("Invalid section.")
+        case .map: return 1
             
         }
             
@@ -80,10 +96,11 @@ class RestaurantDetailTableViewController: UITableViewController {
     )
     -> UITableViewCell {
         
-        switch indexPath.section {
+        let sectionElement = detailElements[indexPath.section]
+        
+        switch sectionElement {
             
-        // Header.
-        case 0:
+        case .header:
             
             guard
                 let cell = tableView.dequeueReusableCell(
@@ -98,13 +115,13 @@ class RestaurantDetailTableViewController: UITableViewController {
             
             return cell
             
-        // Information.
-        case 1:
+        case .information:
             
-            switch indexPath.row {
+            let rowElement = informationElements[indexPath.row]
+            
+            switch rowElement {
                 
-            // Phone number.
-            case 0:
+            case .phoneNumber:
                 
                 guard
                     let cell = tableView.dequeueReusableCell(
@@ -119,8 +136,7 @@ class RestaurantDetailTableViewController: UITableViewController {
                 
                 return cell
                 
-            // Business hours.
-            case 1:
+            case .businessHours:
                 
                 guard
                     let cell = tableView.dequeueReusableCell(
@@ -135,8 +151,7 @@ class RestaurantDetailTableViewController: UITableViewController {
                 
                 return cell
             
-            // Address.
-            case 2:
+            case .address:
                 
                 guard
                     let cell = tableView.dequeueReusableCell(
@@ -151,12 +166,9 @@ class RestaurantDetailTableViewController: UITableViewController {
                 
                 return cell
                 
-            default: fatalError("Invalid row.")
-                
             }
             
-        // Map.
-        case 2:
+        case .map:
             
             guard
                 let cell = tableView.dequeueReusableCell(
@@ -184,8 +196,6 @@ class RestaurantDetailTableViewController: UITableViewController {
             
             return cell
             
-        default: fatalError("Invalid section.")
-            
         }
             
     }
@@ -196,18 +206,15 @@ class RestaurantDetailTableViewController: UITableViewController {
     )
     -> CGFloat {
         
-        switch indexPath.section {
+        let element = detailElements[indexPath.section]
+        
+        switch element {
+        
+        case .header: return UITableView.automaticDimension
             
-        // Header.
-        case 0: return UITableView.automaticDimension
+        case .information: return UITableView.automaticDimension
             
-        // Information.
-        case 1: return UITableView.automaticDimension
-            
-        // Map.
-        case 2: return 200.0
-            
-        default: fatalError("Invalid section.")
+        case .map: return 200.0
             
         }
         
