@@ -8,8 +8,8 @@
 
 // MARK: - RestaurantDetailMapTableViewCell
 
-import UIKit
 import MapKit
+import UIKit
 
 class RestaurantDetailMapTableViewCell: UITableViewCell {
     

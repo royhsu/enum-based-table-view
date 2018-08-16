@@ -8,8 +8,8 @@
 
 // MARK: - RestaurantDetailTableViewController
 
-import UIKit
 import MapKit
+import UIKit
 
 class RestaurantDetailTableViewController: UITableViewController {
     
