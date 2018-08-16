@@ -8,6 +8,7 @@
 
 // MARK: - AppDelegate
 
+import CoreLocation
 import UIKit
 
 @UIApplicationMain
@@ -27,9 +28,21 @@ extension AppDelegate: UIApplicationDelegate {
     )
     -> Bool {
         
-        window.rootViewController = UINavigationController(
-            rootViewController: ViewController()
+        let restaurantDetailViewController = RestaurantDetailTableViewController()
+        
+        restaurantDetailViewController.restaurant = Restaurant(
+            name: "鼎泰豐 (信義總店)",
+            cuisine: .taiwanese,
+            phoneNumber: "02-2321-8928",
+            businessHours: "平日 10:00 ~ 21:00\n假日 09:00 ~ 21:00",
+            address: "106 台北市大安區信義路二段 194 號",
+            coordinate: CLLocationCoordinate2D(
+                latitude: 25.0334878,
+                longitude: 121.5279233
+            )
         )
+        
+        window.rootViewController = restaurantDetailViewController
         
         window.makeKeyAndVisible()
         
