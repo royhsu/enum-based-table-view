@@ -85,10 +85,12 @@ class RestaurantDetailTableViewController: UITableViewController {
         // Header.
         case 0:
             
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "RestaurantDetailHeaderTableViewCell",
-                for: indexPath
-            ) as! RestaurantDetailHeaderTableViewCell
+            guard
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "RestaurantDetailHeaderTableViewCell",
+                    for: indexPath
+                ) as? RestaurantDetailHeaderTableViewCell
+            else { fatalError("Please make sure to register RestaurantDetailHeaderTableViewCell.") }
             
             cell.nameLabel.text = restaurant?.name
             
@@ -104,10 +106,12 @@ class RestaurantDetailTableViewController: UITableViewController {
             // Phone number.
             case 0:
                 
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: "RestaurantDetailInformationTableViewCell",
-                    for: indexPath
-                ) as! RestaurantDetailInformationTableViewCell
+                guard
+                    let cell = tableView.dequeueReusableCell(
+                        withIdentifier: "RestaurantDetailInformationTableViewCell",
+                        for: indexPath
+                    ) as? RestaurantDetailInformationTableViewCell
+                else { fatalError("Please make sure to register RestaurantDetailInformationTableViewCell.") }
                 
                 cell.titleLabel.text = "聯絡電話"
                 
@@ -118,10 +122,12 @@ class RestaurantDetailTableViewController: UITableViewController {
             // Business hours.
             case 1:
                 
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: "RestaurantDetailInformationTableViewCell",
-                    for: indexPath
-                ) as! RestaurantDetailInformationTableViewCell
+                guard
+                    let cell = tableView.dequeueReusableCell(
+                        withIdentifier: "RestaurantDetailInformationTableViewCell",
+                        for: indexPath
+                    ) as? RestaurantDetailInformationTableViewCell
+                else { fatalError("Please make sure to register RestaurantDetailInformationTableViewCell.") }
                 
                 cell.titleLabel.text = "營業時間"
                 
@@ -132,10 +138,12 @@ class RestaurantDetailTableViewController: UITableViewController {
             // Address.
             case 2:
                 
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: "RestaurantDetailInformationTableViewCell",
-                    for: indexPath
-                ) as! RestaurantDetailInformationTableViewCell
+                guard
+                    let cell = tableView.dequeueReusableCell(
+                        withIdentifier: "RestaurantDetailInformationTableViewCell",
+                        for: indexPath
+                    ) as? RestaurantDetailInformationTableViewCell
+                else { fatalError("Please make sure to register RestaurantDetailInformationTableViewCell.") }
                 
                 cell.titleLabel.text = "店家地址"
                 
@@ -150,10 +158,12 @@ class RestaurantDetailTableViewController: UITableViewController {
         // Map.
         case 2:
             
-            let cell = tableView.dequeueReusableCell(
-                withIdentifier: "RestaurantDetailMapTableViewCell",
-                for: indexPath
-            ) as! RestaurantDetailMapTableViewCell
+            guard
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "RestaurantDetailMapTableViewCell",
+                    for: indexPath
+                ) as? RestaurantDetailMapTableViewCell
+            else { fatalError("Please make sure to register RestaurantDetailMapTableViewCell.") }
             
             cell.mapView.removeAnnotations(cell.mapView.annotations)
             
