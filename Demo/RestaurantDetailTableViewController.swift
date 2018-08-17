@@ -13,28 +13,34 @@ import UIKit
 
 class RestaurantDetailTableViewController: UITableViewController {
     
-    enum DetailElement {
+    enum DetailSection {
         
-        case header, information, map
+        enum InformationRow {
+            
+            case phoneNumber, businessHours, address
+            
+        }
+        
+        case header
+        
+        case information(
+            rows: [InformationRow]
+        )
+        
+        case map
         
     }
     
-    enum InformationElement {
-        
-        case phoneNumber, businessHours, address
-        
-    }
-    
-    let detailElements: [DetailElement] = [
+    let detailSections: [DetailSection] = [
         .header,
-        .information,
+        .information(
+            rows: [
+                .phoneNumber,
+                .businessHours,
+                .address
+            ]
+        ),
         .map
-    ]
-    
-    let informationElements: [InformationElement] = [
-        .phoneNumber,
-        .businessHours,
-        .address
     ]
     
     var restaurant: Restaurant?
@@ -68,7 +74,7 @@ class RestaurantDetailTableViewController: UITableViewController {
         
     }
     
-    override func numberOfSections(in tableView: UITableView) -> Int { return detailElements.count }
+    override func numberOfSections(in tableView: UITableView) -> Int { return detailSections.count }
     
     override func tableView(
         _ tableView: UITableView,
@@ -76,13 +82,13 @@ class RestaurantDetailTableViewController: UITableViewController {
     )
     -> Int {
         
-        let element = detailElements[section]
+        let section = detailSections[section]
         
-        switch element {
+        switch section {
         
         case .header: return 1
             
-        case .information: return informationElements.count
+        case let .information(rows): return rows.count
             
         case .map: return 1
             
@@ -96,9 +102,9 @@ class RestaurantDetailTableViewController: UITableViewController {
     )
     -> UITableViewCell {
         
-        let sectionElement = detailElements[indexPath.section]
+        let section = detailSections[indexPath.section]
         
-        switch sectionElement {
+        switch section {
             
         case .header:
             
@@ -115,11 +121,11 @@ class RestaurantDetailTableViewController: UITableViewController {
             
             return cell
             
-        case .information:
+        case let .information(rows):
             
-            let rowElement = informationElements[indexPath.row]
+            let row = rows[indexPath.row]
             
-            switch rowElement {
+            switch row {
                 
             case .phoneNumber:
                 
@@ -206,9 +212,9 @@ class RestaurantDetailTableViewController: UITableViewController {
     )
     -> CGFloat {
         
-        let element = detailElements[indexPath.section]
+        let section = detailSections[indexPath.section]
         
-        switch element {
+        switch section {
         
         case .header: return UITableView.automaticDimension
             
