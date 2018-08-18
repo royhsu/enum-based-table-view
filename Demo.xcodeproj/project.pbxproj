@@ -10,6 +10,11 @@
 		B04FF06A2125A8E0003A9A16 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FF0692125A8E0003A9A16 /* Restaurant.swift */; };
 		B04FF06C2125A996003A9A16 /* Cuisine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FF06B2125A996003A9A16 /* Cuisine.swift */; };
 		B04FF06E2125B27F003A9A16 /* RestaurantDetailHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B04FF06D2125B27F003A9A16 /* RestaurantDetailHeaderTableViewCell.xib */; };
+		B04FF070212800A0003A9A16 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FF06F212800A0003A9A16 /* ReusableCell.swift */; };
+		B04FF072212800E0003A9A16 /* FileRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FF071212800E0003A9A16 /* FileRepresentable.swift */; };
+		B04FF074212800FD003A9A16 /* ReusableCell+FileRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FF073212800FD003A9A16 /* ReusableCell+FileRepresentable.swift */; };
+		B04FF0762128014F003A9A16 /* UITableView+Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FF0752128014F003A9A16 /* UITableView+Register.swift */; };
+		B04FF078212801AB003A9A16 /* UITableView+Dequeue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04FF077212801AB003A9A16 /* UITableView+Dequeue.swift */; };
 		B08F843A2125503F005A3492 /* RestaurantDetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5B0B021244A8600368B5D /* RestaurantDetailHeaderTableViewCell.swift */; };
 		B08F843B2125503F005A3492 /* RestaurantDetailInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C5B0AF21244A8600368B5D /* RestaurantDetailInformationTableViewCell.swift */; };
 		B08F843C2125503F005A3492 /* UIView+Subview.swift in Sources */ = {isa = PBXBuildFile; fileRef = B08F843621254C59005A3492 /* UIView+Subview.swift */; };
@@ -37,6 +42,11 @@
 		B04FF0692125A8E0003A9A16 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		B04FF06B2125A996003A9A16 /* Cuisine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cuisine.swift; sourceTree = "<group>"; };
 		B04FF06D2125B27F003A9A16 /* RestaurantDetailHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RestaurantDetailHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		B04FF06F212800A0003A9A16 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
+		B04FF071212800E0003A9A16 /* FileRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileRepresentable.swift; sourceTree = "<group>"; };
+		B04FF073212800FD003A9A16 /* ReusableCell+FileRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReusableCell+FileRepresentable.swift"; sourceTree = "<group>"; };
+		B04FF0752128014F003A9A16 /* UITableView+Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Register.swift"; sourceTree = "<group>"; };
+		B04FF077212801AB003A9A16 /* UITableView+Dequeue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Dequeue.swift"; sourceTree = "<group>"; };
 		B08F843621254C59005A3492 /* UIView+Subview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Subview.swift"; sourceTree = "<group>"; };
 		B08F843821254CAF005A3492 /* RestaurantDetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailTableViewController.swift; sourceTree = "<group>"; };
 		B08F843E212550F1005A3492 /* RestaurantDetailMapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantDetailMapTableViewCell.swift; sourceTree = "<group>"; };
@@ -87,6 +97,11 @@
 				B04FF0692125A8E0003A9A16 /* Restaurant.swift */,
 				B04FF06B2125A996003A9A16 /* Cuisine.swift */,
 				B08F843621254C59005A3492 /* UIView+Subview.swift */,
+				B04FF071212800E0003A9A16 /* FileRepresentable.swift */,
+				B04FF06F212800A0003A9A16 /* ReusableCell.swift */,
+				B04FF073212800FD003A9A16 /* ReusableCell+FileRepresentable.swift */,
+				B04FF0752128014F003A9A16 /* UITableView+Register.swift */,
+				B04FF077212801AB003A9A16 /* UITableView+Dequeue.swift */,
 				B0C5B0A0212449AC00368B5D /* AppDelegate.swift */,
 				B0C5B0A4212449AC00368B5D /* Assets.xcassets */,
 				B0C5B0A6212449AC00368B5D /* LaunchScreen.storyboard */,
@@ -171,10 +186,15 @@
 				B08F843C2125503F005A3492 /* UIView+Subview.swift in Sources */,
 				B08F843A2125503F005A3492 /* RestaurantDetailHeaderTableViewCell.swift in Sources */,
 				B08F843F212550F1005A3492 /* RestaurantDetailMapTableViewCell.swift in Sources */,
+				B04FF074212800FD003A9A16 /* ReusableCell+FileRepresentable.swift in Sources */,
 				B04FF06A2125A8E0003A9A16 /* Restaurant.swift in Sources */,
+				B04FF0762128014F003A9A16 /* UITableView+Register.swift in Sources */,
 				B0C5B0A1212449AC00368B5D /* AppDelegate.swift in Sources */,
+				B04FF072212800E0003A9A16 /* FileRepresentable.swift in Sources */,
+				B04FF078212801AB003A9A16 /* UITableView+Dequeue.swift in Sources */,
 				B08F843D21255042005A3492 /* RestaurantDetailTableViewController.swift in Sources */,
 				B08F843B2125503F005A3492 /* RestaurantDetailInformationTableViewCell.swift in Sources */,
+				B04FF070212800A0003A9A16 /* ReusableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

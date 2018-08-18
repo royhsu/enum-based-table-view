@@ -51,26 +51,14 @@ class RestaurantDetailTableViewController: UITableViewController {
         
         tableView.separatorStyle = .none
         
-        // Header cell.
         tableView.register(
-            UINib(
-                nibName: "RestaurantDetailHeaderTableViewCell",
-                bundle: nil
-            ),
-            forCellReuseIdentifier: "RestaurantDetailHeaderTableViewCell"
+            RestaurantDetailHeaderTableViewCell.self,
+            bundle: nil
         )
         
-        // Information cell.
-        tableView.register(
-            RestaurantDetailInformationTableViewCell.self,
-            forCellReuseIdentifier: "RestaurantDetailInformationTableViewCell"
-        )
+        tableView.register(RestaurantDetailInformationTableViewCell.self)
         
-        // Map cell.
-        tableView.register(
-            RestaurantDetailMapTableViewCell.self,
-            forCellReuseIdentifier: "RestaurantDetailMapTableViewCell"
-        )
+        tableView.register(RestaurantDetailMapTableViewCell.self)
         
     }
     
@@ -108,12 +96,10 @@ class RestaurantDetailTableViewController: UITableViewController {
             
         case .header:
             
-            guard
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: "RestaurantDetailHeaderTableViewCell",
-                    for: indexPath
-                ) as? RestaurantDetailHeaderTableViewCell
-            else { fatalError("Please make sure to register RestaurantDetailHeaderTableViewCell.") }
+            let cell = tableView.dequeueReusableCell(
+                RestaurantDetailHeaderTableViewCell.self,
+                for: indexPath
+            )
             
             cell.nameLabel.text = restaurant?.name
             
@@ -125,16 +111,14 @@ class RestaurantDetailTableViewController: UITableViewController {
             
             let row = rows[indexPath.row]
             
+            let cell = tableView.dequeueReusableCell(
+                RestaurantDetailInformationTableViewCell.self,
+                for: indexPath
+            )
+            
             switch row {
                 
             case .phoneNumber:
-                
-                guard
-                    let cell = tableView.dequeueReusableCell(
-                        withIdentifier: "RestaurantDetailInformationTableViewCell",
-                        for: indexPath
-                    ) as? RestaurantDetailInformationTableViewCell
-                else { fatalError("Please make sure to register RestaurantDetailInformationTableViewCell.") }
                 
                 cell.titleLabel.text = "聯絡電話"
                 
@@ -144,13 +128,6 @@ class RestaurantDetailTableViewController: UITableViewController {
                 
             case .businessHours:
                 
-                guard
-                    let cell = tableView.dequeueReusableCell(
-                        withIdentifier: "RestaurantDetailInformationTableViewCell",
-                        for: indexPath
-                    ) as? RestaurantDetailInformationTableViewCell
-                else { fatalError("Please make sure to register RestaurantDetailInformationTableViewCell.") }
-                
                 cell.titleLabel.text = "營業時間"
                 
                 cell.contentLabel.text = restaurant?.businessHours
@@ -158,13 +135,6 @@ class RestaurantDetailTableViewController: UITableViewController {
                 return cell
             
             case .address:
-                
-                guard
-                    let cell = tableView.dequeueReusableCell(
-                        withIdentifier: "RestaurantDetailInformationTableViewCell",
-                        for: indexPath
-                    ) as? RestaurantDetailInformationTableViewCell
-                else { fatalError("Please make sure to register RestaurantDetailInformationTableViewCell.") }
                 
                 cell.titleLabel.text = "店家地址"
                 
@@ -176,12 +146,10 @@ class RestaurantDetailTableViewController: UITableViewController {
             
         case .map:
             
-            guard
-                let cell = tableView.dequeueReusableCell(
-                    withIdentifier: "RestaurantDetailMapTableViewCell",
-                    for: indexPath
-                ) as? RestaurantDetailMapTableViewCell
-            else { fatalError("Please make sure to register RestaurantDetailMapTableViewCell.") }
+            let cell = tableView.dequeueReusableCell(
+                RestaurantDetailMapTableViewCell.self,
+                for: indexPath
+            )
             
             cell.mapView.removeAnnotations(cell.mapView.annotations)
             

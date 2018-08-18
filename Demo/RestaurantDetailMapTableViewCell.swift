@@ -46,3 +46,7 @@ class RestaurantDetailMapTableViewCell: UITableViewCell {
     }
     
 }
+
+// MARK: - ReusableCell
+
+extension RestaurantDetailMapTableViewCell: ReusableCell { }

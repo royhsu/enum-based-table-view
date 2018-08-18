@@ -19,3 +19,11 @@ class RestaurantDetailHeaderTableViewCell: UITableViewCell {
     weak var cuisineLabel: UILabel!
 
 }
+
+// MARK: - ReusableCell
+
+extension RestaurantDetailHeaderTableViewCell: ReusableCell { }
+
+// MARK: - FileRepresentable
+
+extension RestaurantDetailHeaderTableViewCell: FileRepresentable { }
