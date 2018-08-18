@@ -123,18 +123,18 @@ class RestaurantDetailTableViewController: UITableViewController {
             
         case let .information(rows):
             
+            guard
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "RestaurantDetailInformationTableViewCell",
+                    for: indexPath
+                ) as? RestaurantDetailInformationTableViewCell
+            else { fatalError("Please make sure to register RestaurantDetailInformationTableViewCell.") }
+            
             let row = rows[indexPath.row]
             
             switch row {
                 
             case .phoneNumber:
-                
-                guard
-                    let cell = tableView.dequeueReusableCell(
-                        withIdentifier: "RestaurantDetailInformationTableViewCell",
-                        for: indexPath
-                    ) as? RestaurantDetailInformationTableViewCell
-                else { fatalError("Please make sure to register RestaurantDetailInformationTableViewCell.") }
                 
                 cell.titleLabel.text = "聯絡電話"
                 
@@ -144,13 +144,6 @@ class RestaurantDetailTableViewController: UITableViewController {
                 
             case .businessHours:
                 
-                guard
-                    let cell = tableView.dequeueReusableCell(
-                        withIdentifier: "RestaurantDetailInformationTableViewCell",
-                        for: indexPath
-                    ) as? RestaurantDetailInformationTableViewCell
-                else { fatalError("Please make sure to register RestaurantDetailInformationTableViewCell.") }
-                
                 cell.titleLabel.text = "營業時間"
                 
                 cell.contentLabel.text = restaurant?.businessHours
@@ -158,13 +151,6 @@ class RestaurantDetailTableViewController: UITableViewController {
                 return cell
             
             case .address:
-                
-                guard
-                    let cell = tableView.dequeueReusableCell(
-                        withIdentifier: "RestaurantDetailInformationTableViewCell",
-                        for: indexPath
-                    ) as? RestaurantDetailInformationTableViewCell
-                else { fatalError("Please make sure to register RestaurantDetailInformationTableViewCell.") }
                 
                 cell.titleLabel.text = "店家地址"
                 
