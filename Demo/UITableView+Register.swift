@@ -31,10 +31,10 @@ extension UITableView {
     where
         Cell: UITableViewCell,
         Cell: ReusableCell,
-        Cell: FileRepresentable {
+        Cell: NibCell {
         
         let nib = UINib(
-            nibName: cellType.filename,
+            nibName: cellType.nibName,
             bundle: bundle
         )
         

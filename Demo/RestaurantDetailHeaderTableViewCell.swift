@@ -24,6 +24,6 @@ class RestaurantDetailHeaderTableViewCell: UITableViewCell {
 
 extension RestaurantDetailHeaderTableViewCell: ReusableCell { }
 
-// MARK: - FileRepresentable
+// MARK: - NibCell
 
-extension RestaurantDetailHeaderTableViewCell: FileRepresentable { }
+extension RestaurantDetailHeaderTableViewCell: NibCell { }
