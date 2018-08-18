@@ -109,6 +109,13 @@ class RestaurantDetailTableViewController: UITableViewController {
             
         case let .information(rows):
             
+            guard
+                let cell = tableView.dequeueReusableCell(
+                    withIdentifier: "RestaurantDetailInformationTableViewCell",
+                    for: indexPath
+                ) as? RestaurantDetailInformationTableViewCell
+            else { fatalError("Please make sure to register RestaurantDetailInformationTableViewCell.") }
+            
             let row = rows[indexPath.row]
             
             let cell = tableView.dequeueReusableCell(
