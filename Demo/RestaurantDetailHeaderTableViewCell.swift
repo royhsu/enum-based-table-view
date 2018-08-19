@@ -17,5 +17,13 @@ class RestaurantDetailHeaderTableViewCell: UITableViewCell {
     
     @IBOutlet
     weak var cuisineLabel: UILabel!
-
+    
+    override func awakeFromNib() {
+        
+        super.awakeFromNib()
+        
+        selectionStyle = .none
+        
+    }
+    
 }
