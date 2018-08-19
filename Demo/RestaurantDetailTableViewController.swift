@@ -135,7 +135,7 @@ class RestaurantDetailTableViewController: UITableViewController {
                 return cell
             
             case .address:
-                
+
                 cell.titleLabel.text = "店家地址"
                 
                 cell.contentLabel.text = restaurant?.address
